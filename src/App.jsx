@@ -4,7 +4,7 @@ import CartContainer from "./components/CartContainer";
 import Navbar from "./components/Navbar";
 import { calculateTotals } from "./features/cart/cartSlice";
 import { useEffect } from "react";
-
+import Modal from "./components/Modal";
 function App() {
   const dispatch = useDispatch();
   const { cartItems } = useSelector((store) => store.cart);
@@ -13,6 +13,7 @@ function App() {
   }, [cartItems]);
   return (
     <main>
+      <Modal />
       <Navbar />
       <CartContainer />
     </main>
